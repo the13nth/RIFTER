@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="rifters"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Rifter
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="rifterForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">Rifter's first name</ion-label>
+        <ion-input formControlName="first_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Rifter's second name</ion-label>
+        <ion-input formControlName="second_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Home address</ion-label>
+        <ion-input formControlName="morning_prov"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Work address</ion-label>
+        <ion-input formControlName="evening_prov"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!rifterForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  

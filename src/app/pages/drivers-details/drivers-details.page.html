@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="driverses"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Drivers
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="driversForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">First Name</ion-label>
+        <ion-input formControlName="first_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Last Name</ion-label>
+        <ion-input formControlName="last_name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Available seats</ion-label>
+        <ion-input formControlName="available_seats"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Rifter requirements</ion-label>
+        <ion-input formControlName="Rifter_req"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>CO-PAY</ion-label>
+        <ion-checkbox slot="start" formControlName="co_pay"></ion-checkbox>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!driversForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  

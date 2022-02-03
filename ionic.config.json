@@ -1,0 +1,7 @@
+{
+  "name": "radBase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

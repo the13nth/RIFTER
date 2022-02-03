@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="rIFTs"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        RIFT
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form [formGroup]="riftForm" (ngSubmit)="submit()">
+    <ion-item>
+        <ion-label position="stacked">Rift ID</ion-label>
+        <ion-input formControlName="RIFT_ID"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">RIFTER</ion-label>
+        <ion-input formControlName="RIFTER"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">from</ion-label>
+        <ion-input formControlName="Prov"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Destination</ion-label>
+        <ion-input formControlName="Dest"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>CO-PAY</ion-label>
+        <ion-checkbox slot="start" formControlName="CO_PAY"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">status</ion-label>
+        <ion-input formControlName="RIFT_STATUS"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">comments</ion-label>
+        <ion-input formControlName="Comments"></ion-input>
+      </ion-item>
+      
+      <ion-button type="submit" expand="block" class="ion-padding-horizontal ion-margin-vertical"
+      [disabled]="!riftForm.valid">
+        Save
+      </ion-button>
+
+      <ion-button *ngIf="id" (click)="delete()" type="button" expand="block" class="ion-padding-horizontal ion-margin-vertical" color="danger">
+        Delete
+      </ion-button>
+    </form>
+  </ion-content>
+  
